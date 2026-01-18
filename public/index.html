@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+
+    <!-- 核心 1：视口设置优化 -->
+    <!-- viewport-fit=cover 用于适配 iPhone 刘海屏，填满全屏 -->
+    <!-- user-scalable=no 禁止缩放，获得更像 App 的触感 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
+
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="大学学业规划系统" />
+
+    <!-- 核心 2：连接 PWA 配置文件 (你刚才创建的 manifest.json) -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <!-- 核心 3：iOS 专属优化 (让 iPhone 添加到桌面后像原生 App) -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="学业规划" />
+    <link
+      rel="apple-touch-icon"
+      href="https://cdn-icons-png.flaticon.com/512/2997/2997322.png"
+    />
+
+    <title>供应链学业规划</title>
+
+    <!-- 4. 引入 Tailwind CSS 美化引擎 (保留原配置) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 5. 配置 Tailwind 字体和颜色 (保留原配置) -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: [
+                "Inter",
+                "system-ui",
+                "-apple-system",
+                "BlinkMacSystemFont",
+                "Segoe UI",
+                "Roboto",
+                "sans-serif",
+              ],
+            },
+            colors: {
+              indigo: {
+                50: "#eef2ff",
+                100: "#e0e7ff",
+                500: "#6366f1",
+                600: "#4f46e5",
+                700: "#4338ca",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- 6. 样式配置 (保留原配置并微调) -->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap");
+
+      body {
+        background-color: #f8fafc;
+        /* 针对 iOS 的点击高亮去除，让点击更像原生按钮 */
+        -webkit-tap-highlight-color: transparent;
+        /* 防止 iOS 列表顶部的橡皮筋回弹效果影响全屏体验 */
+        overscroll-behavior-y: none;
+      }
+
+      /* 修复动画效果 */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .animate-in {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+      .fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+      .slide-in-from-bottom-4 {
+        animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      /* 滚动条美化 */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>你需要开启 JavaScript 才能运行此应用。</noscript>
+    <div id="root"></div>
+  </body>
+</html>
