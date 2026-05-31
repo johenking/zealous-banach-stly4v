@@ -58,7 +58,7 @@ import {
 // =================================================================
 // 🔴 部署配置
 // =================================================================
-const USER_FIREBASE_CONFIG = {
+const DEMO_FIREBASE_CONFIG = {
   apiKey: "AIzaSyAonGPelzYJXvgCwu7_X-M0hKnwNGydZRE",
   authDomain: "my-degree-planner.firebaseapp.com",
   projectId: "my-degree-planner",
@@ -67,6 +67,27 @@ const USER_FIREBASE_CONFIG = {
   appId: "1:61543774322:web:5f41f4c7652cc140236aeb",
   measurementId: "G-SHGEBF4DMW",
 };
+
+const ENV_FIREBASE_CONFIG = {
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+};
+
+const hasEnvFirebaseConfig = Boolean(
+  ENV_FIREBASE_CONFIG.apiKey &&
+    ENV_FIREBASE_CONFIG.authDomain &&
+    ENV_FIREBASE_CONFIG.projectId &&
+    ENV_FIREBASE_CONFIG.appId
+);
+
+const USER_FIREBASE_CONFIG = hasEnvFirebaseConfig
+  ? ENV_FIREBASE_CONFIG
+  : DEMO_FIREBASE_CONFIG;
 
 // =================================================================
 // 🚀 系统初始化
