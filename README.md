@@ -4,6 +4,17 @@ Grade Planner is a mobile-first academic planning app for tracking degree progre
 
 The project was originally built as a personal curriculum tracker and is being prepared as a reusable open-source template for students who need a lightweight way to understand graduation requirements and academic progress.
 
+## Demo
+
+- Live demo: https://johenking.github.io/grade-planner
+- Repository: https://github.com/johenking/grade-planner
+
+## Screenshots
+
+| Mobile dashboard | Desktop dashboard |
+| --- | --- |
+| ![Mobile dashboard](docs/screenshots/mobile-dashboard.png) | ![Desktop dashboard](docs/screenshots/desktop-dashboard.png) |
+
 ## Features
 
 - Semester-based curriculum checklist
