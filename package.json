@@ -41,10 +41,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/johenking/zealous-banach-stly4v.git"
+    "url": "https://github.com/johenking/grade-planner.git"
   },
   "bugs": {
-    "url": "https://github.com/johenking/zealous-banach-stly4v/issues"
+    "url": "https://github.com/johenking/grade-planner/issues"
   },
-  "homepage": "https://github.com/johenking/zealous-banach-stly4v#readme"
+  "homepage": "https://johenking.github.io/grade-planner"
 }
